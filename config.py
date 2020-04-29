@@ -3,9 +3,6 @@ import logging
 import os
 import math
 from shutil import copyfile
-
-from papirus import Papirus
-
 import utils
 
 home = os.path.expanduser("~")
@@ -112,10 +109,10 @@ conf = create_config()
 # TODO: Add variable to set certificate check to true or false
 
 # Papirus eInk size is 128 x 96 pixels
-WHITE = 1
-BLACK = 0
-PAPIRUSROT = 0
-PAPIRUS = Papirus(rotation=PAPIRUSROT)
+# WHITE = 1
+# BLACK = 0
+# PAPIRUSROT = 0
+# PAPIRUS = Papirus(rotation=PAPIRUSROT)
 
 # API URL for coingecko
 COINGECKO_URL_BASE = "https://api.coingecko.com/api/v3/"
