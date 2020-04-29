@@ -24,7 +24,6 @@ logger = logging.getLogger("MAIN")
 
 class AtmApp(App):
     def build(self):
-        Clock.schedule_interval(self.update, 0.1)
         return Atm()
 
     # utils.check_epd_size()
