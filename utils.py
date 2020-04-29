@@ -13,7 +13,6 @@ logger = logging.getLogger("UTILS")
 def coins_inserted(led):
     """Actions coins inserted
     """
-    global led
 
     if config.FIAT == 0:
         config.BTCPRICE = utils.get_btc_price(config.conf["atm"]["cur"])
@@ -194,7 +193,7 @@ def coin_event(channel):
     config.LASTIMPULSE = time.time()
     config.PULSES = config.PULSES + 1
 
-    
+
 def setup_coin_acceptor():
     """Initialises the coin acceptor parameters and sets up a callback for button pushes
     and coin inserts.
