@@ -28,7 +28,7 @@ class AtmApp(App):
         Clock.schedule_interval(self.update, 0.1)
         return Atm()
 
-    utils.check_epd_size()
+    # utils.check_epd_size()
 
     logger.info("Application started")
     # display.update_startup_screen()
