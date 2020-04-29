@@ -5,17 +5,17 @@
         name: 'start'
         Button:
             text: 'goto selextion'
-            on_release: root.current='selection'
+            on_release: app.root.current='selection'
 
     SelectionPage:
         name: 'selection'
         Button:
             text: 'goto selextion'
-            on_release: root.current='payment'
+            on_release: app.root.current='payment'
 
 
     PaymentPage:
         name: 'payment'
         Button:
             text: 'goto selextion'
-            on_release: root.current='start'
+            on_release: app.root.current='start'
