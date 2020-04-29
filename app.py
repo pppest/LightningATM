@@ -21,6 +21,8 @@ import importlib
 led = "off"
 logger = logging.getLogger("MAIN")
 
+utils.setup_coin_acceptor()
+
 
 class StartPage(Screen):
     pass
@@ -34,22 +36,14 @@ class PaymentPage(Screen):
     pass
 
 
-class LAtm(ScreenManager):
+class Latm(ScreenManager):
     pass
 
 
 class LatmApp(App):
     def build(self):
-        return LAtm()
+        return Latm()
 
-    # utils.check_epd_size()
-
-    logger.info("Application started")
-    # display.update_startup_screen()
-    utils.setup_coin_acceptor()
-
-    # while True:
-    #     monitor_coins_and_button()
 
 if __name__ == "__main__":
-    LAtmApp().run()
+    LatmApp().run()
