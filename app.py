@@ -9,7 +9,7 @@ from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
 from kivy.properties import ObjectProperty
 from kivy.properties import StringProperty, NumericProperty
-from kivy.uix.screenmanager import ScreenManager, Screen, NoTransitionuix.screenmanager import ScreenManager, Screen, NoTransition
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 import logging
 import os
