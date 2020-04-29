@@ -9,7 +9,6 @@ import sys
 import time
 import math
 
-import RPi.GPIO as GPIO
 from PIL import Image, ImageDraw
 
 import config

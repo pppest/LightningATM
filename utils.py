@@ -1,3 +1,5 @@
+
+import RPi.GPIO as GPIO
 import logging
 import os
 import requests
@@ -135,16 +137,6 @@ def button_pushed():
             display.update_lntxbot_balance(balance)
         else:
             logger.error("Scanning of wallet credentials failed.")
-
-        # scan the credentials
-        # lntxcreds = lntxbot.scan_creds()
-
-        # save them to the current config and reload config file
-        # config.update_config("lntxbot", "creds", lntxcreds)
-        # if config.check_dangermode():
-        #     importlib.reload(config)
-
-        # return the current balance to the user on the screen
 
         softreset()
 
