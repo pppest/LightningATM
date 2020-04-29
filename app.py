@@ -52,4 +52,4 @@ class LatmApp(App):
     #     monitor_coins_and_button()
 
 if __name__ == "__main__":
-    AtmApp().run()
+    LAtmApp().run()
