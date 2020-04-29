@@ -22,12 +22,25 @@ led = "off"
 logger = logging.getLogger("MAIN")
 
 
-class Atm(ScreenManager):
+class StartPage(Screen):
     pass
 
-class AtmApp(App):
+
+class SelectionPage(Screen):
+    pass
+
+
+class PaymentPage(Screen):
+    pass
+
+
+class LAtm(ScreenManager):
+    pass
+
+
+class LatmApp(App):
     def build(self):
-        return Atm()
+        return LAtm()
 
     # utils.check_epd_size()
 
