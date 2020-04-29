@@ -2,13 +2,13 @@
 
 
 from kivy.app import App
+from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 
 import logging
 import os
 import sys
 import time
 import math
-
 from PIL import Image, ImageDraw
 
 import config
@@ -22,9 +22,12 @@ led = "off"
 logger = logging.getLogger("MAIN")
 
 
+class Atm(Screenmanager):
+    pass
+
 class AtmApp(App):
     def build(self):
-        return AtmApp()
+        return Atm()
 
     # utils.check_epd_size()
 
