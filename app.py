@@ -24,7 +24,7 @@ logger = logging.getLogger("MAIN")
 
 class AtmApp(App):
     def build(self):
-        return Atm()
+        return AtmApp()
 
     # utils.check_epd_size()
 
