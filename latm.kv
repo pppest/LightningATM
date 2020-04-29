@@ -3,11 +3,19 @@
 <Atm>:
     StartPage:
         name: 'start'
-
+        Button:
+            text: 'goto selextion'
+            on_release: root.current='selection'
 
     SelectionPage:
-        name: 'start'
+        name: 'selection'
+        Button:
+            text: 'goto selextion'
+            on_release: root.current='payment'
 
 
     PaymentPage:
-        name: 'start'
+        name: 'payment'
+        Button:
+            text: 'goto selextion'
+            on_release: root.current='start'
