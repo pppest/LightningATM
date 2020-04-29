@@ -22,7 +22,7 @@ led = "off"
 logger = logging.getLogger("MAIN")
 
 
-class Atm(Screenmanager):
+class Atm(ScreenManager):
     pass
 
 class AtmApp(App):
