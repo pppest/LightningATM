@@ -37,6 +37,7 @@
                 size_hint_max_y: 60
                 pos_hint: {'top': 0.98, 'right': 0.2}
                 font_size: 33
+                on_release: app.root.close()
 
             Button:
                 text: "Back"
@@ -49,7 +50,7 @@
                 font_size: 33
 
             Button:
-                text: "Start"
+                text: "Selection"
                 size_hint: 0.2, 0.1
                 size_hint_min_x: 150
                 size_hint_min_y: 60
@@ -57,23 +58,137 @@
                 size_hint_max_y: 60
                 pos_hint: {'center_x': 0.5, 'center_y': 0.2}
                 font_size: 33
+                on_release: app.root.current = 'SelectionPage'
 
-        #
-        # name: 'start'
-        # Label:
-        #     font_color: 1,1,1,1
-        #     text: 'start'
+    SelectionPage:
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: (1, 1, 1, 1)
+                Line:
+                    rounded_rectangle: 250, 150, 300, 200, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 20, 20, 760, 370, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 198, 405, 420, 60, 20, 50
+                    width: 2
+            Label:
+                text: "LIGHTING ATM"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                font_size: 45
+            Label:
+                text: "Invoice oder LNURL"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.53}
+                font_size: 30
+
+            Button:
+                text: "Home"
+                size_hint: (0.2, 0.1)
+                size_hint_min_X: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'top': 0.98, 'right': 0.2}
+                font_size: 33
+                on_release: app.root.current = 'MainPage'
+
+            Button:
+                text: "Back"
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'top': 0.98, 'right': 0.99}
+                font_size: 33
+                on_release: app.root.current = 'MainPage'
+
+            Button:
+                text: "Invoice"
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                font_size: 33
+                on_release: app.root.current = 'PaymentPage'
+
+            Button:
+                text: "LNURL"
+                size_hint: (0.2, 0.1)
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.6, 'center_y': 0.2}
+                font_size: 33
 
 
-    # SelectionPage:
-    #     name: 'selection'
-    #     Button:
-    #         text: 'goto selextion'
-    #         on_release: app.root.current='payment'
-    #
-    #
-    # PaymentPage:
-    #     name: 'payment'
-    #     Button:
-    #         text: 'goto selextion'
-    #         on_release: app.root.current='start'
+    PaymentPage:
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: (1, 1, 1, 1)
+                Line:
+                    rounded_rectangle: 250, 150, 300, 200, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 20, 20, 760, 370, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 198, 405, 420, 60, 20, 50
+                    width: 2
+            Label:
+                text: "LIGHTING ATM"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                font_size: 45
+            Label:
+                text: "Invoice oder LNURL"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.53}
+                font_size: 30
+
+            Button:
+                text: "Home"
+                size_hint: (0.2, 0.1)
+                size_hint_min_X: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'top': 0.98, 'right': 0.2}
+                font_size: 33
+                on_release: app.root.current = 'MainPage'
+
+            Button:
+                text: "Back"
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'top': 0.98, 'right': 0.99}
+                font_size: 33
+                on_release: app.root.current = 'MainPage'
+
+            Button:
+                text: "Invoice"
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                font_size: 33
+                on_release: app.root.current = 'PaymentPage'
+
+            Button:
+                text: "LNURL"
+                size_hint: (0.2, 0.1)
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.6, 'center_y': 0.2}
+                font_size: 33
