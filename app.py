@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 
 from kivy.app import App
-# from kivy.lang import Builder
-
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 import logging
-
 import config
 import utils
-
+import os
+import sys
+import display
 
 led = "off"
 logger = logging.getLogger("MAIN")
