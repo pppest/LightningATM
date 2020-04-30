@@ -29,14 +29,7 @@ import importlib
 
 #utils.setup_coin_acceptor()
 
-class StartScreen(Screen):
-    pass
-
-
-class BuyScreen(Screen):
-    pass
-
-class CheckoutScreen(BuyScreen):
+class StartPage(Screen):
     pass
 
 

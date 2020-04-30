@@ -3,42 +3,25 @@
 #:import time time
 
 
-# ATM screens
-<Atm>:
-    StartScreen:
-        name: 'start'
-        AtmButton:
-            on_press: app.root.current = 'start'
-            size_hint: 1, 1
-            Image:
-                id: bgimage
-                source: '
-                y: 0
-                x: 0
-                size: 800, 480
-                allow_stretch: False
-                keep_ratio: True
 
 
-
-#
-# <Atm>:
-#     StartPage:
-#         FloatLayout:
-#             canvas:
-#                 Color:
-#                     rgb: (1, 1, 1, 1)
-#                 Line:
-#                     rounded_rectangle: 250, 150, 300, 200, 30, 50
-#                     width: 2
-#                 Line:
-#                     rounded_rectangle: 20, 20, 760, 370, 30, 50
-#                     width: 2
-#                 Line:
-#                     rounded_rectangle: 198, 405, 420, 60, 20, 50
-#                     width: 2
-#                 Label:
-#                     text: "LIGHTING ATM"
+<Latm>:
+    StartPage:
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: (1, 1, 1, 1)
+                Line:
+                    rounded_rectangle: 250, 150, 300, 200, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 20, 20, 760, 370, 30, 50
+                    width: 2
+                Line:
+                    rounded_rectangle: 198, 405, 420, 60, 20, 50
+                    width: 2
+                Label:
+                    text: "LIGHTING ATM"
 #                 # pos_hint: 'center_x': 0.5, 'center_y': 0.9
                 # font_size:45
     #     # the label has to be added to main widget, which is the page actually
