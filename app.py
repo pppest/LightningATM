@@ -14,6 +14,8 @@ led = "off"
 logger = logging.getLogger("MAIN")
 utils.setup_coin_acceptor()
 
+## checks if a screen is set in config
+
 ## start Kivy version
 if config.kivy:
 

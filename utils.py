@@ -12,6 +12,9 @@ from pathlib import Path
 
 logger = logging.getLogger("UTILS")
 
+## just copy pasted the methods here better check if all is good
+
+
 def coins_inserted(led):
     """Actions coins inserted
     """
