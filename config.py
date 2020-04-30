@@ -6,7 +6,7 @@ from shutil import copyfile
 import utils
 
 
-kivy = true
+kivy = True
 Papyrus = False
 
 home = os.path.expanduser("~")
