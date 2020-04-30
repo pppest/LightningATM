@@ -456,3 +456,28 @@ def init_screen(color):
     # prepare for drawing
     draw = ImageDraw.Draw(image)
     return image, width, height, draw
+
+
+
+def run():
+    utils.check_epd_size()
+    logger.info("Application started")
+
+    # Display startup startup_screen
+    display.update_startup_screen()
+
+    while True:
+        try:
+            while True:
+                utils.monitor_coins_and_button()
+
+        except KeyboardInterrupt:
+            display.update_shutdown_screen()
+            utils.GPIO.cleanup()
+            logger.info("Application finished (Keyboard Interrupt)")
+            sys.exit("Manually Interrupted")
+
+        except Exception:
+            logger.exception("Oh no, something bad happened! Restarting...")
+            utils.GPIO.cleanup()
+            os.execv("/home/pi/LightningATM/app.py", [""])

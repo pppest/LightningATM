@@ -7,7 +7,8 @@ import utils
 
 
 
-display = 'touchscreen'
+display = 'touchscreen' ## options: eink_papirus, touchscreen
+led = "off"
 
 home = os.path.expanduser("~")
 ATM_data_dir = home + "/.lightningATM/"
