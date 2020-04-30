@@ -1,6 +1,4 @@
 #:import Factory kivy.factory.Factory
-#:import c config
-#:import time time
 
 <Latm>:
     StartPage:
@@ -58,7 +56,7 @@
                 size_hint_max_y: 60
                 pos_hint: {'center_x': 0.5, 'center_y': 0.2}
                 font_size: 33
-                on_release: app.root.current = 'PaymentPage'
+                on_release: app.root.current = 'SelectionPage'
 
     SelectionPage:
         FloatLayout:
