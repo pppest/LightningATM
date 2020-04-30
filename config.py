@@ -5,6 +5,10 @@ import math
 from shutil import copyfile
 import utils
 
+
+kivy = true
+Papyrus = False
+
 home = os.path.expanduser("~")
 ATM_data_dir = home + "/.lightningATM/"
 config_file_path = ATM_data_dir + "config.ini"

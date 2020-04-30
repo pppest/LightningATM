@@ -29,19 +29,56 @@ import importlib
 
 #utils.setup_coin_acceptor()
 
-class StartPage(Screen):
-    pass
+
+if config.kivy:
+
+    class StartPage(Screen):
+        pass
 
 
-class Latm(ScreenManager):
-    pass
+    class Latm(ScreenManager):
+        pass
 
 
-## The App class mainly updates properties of the kivy ATM
-## the widgets are defined in atm.kv
-class LatmApp(App):
-    def build(self):
-        return Latm()
+    ## The App class mainly updates properties of the kivy ATM
+    ## the widgets are defined in atm.kv
+    class LatmApp(App):
+        def build(self):
+            return Latm()
 
-if __name__ == "__main__":
-    LatmApp().run()
+    if __name__ == "__main__":
+        LatmApp().run()
+
+elif config.papyrus:
+
+    def main():
+        utils.check_epd_size()
+        logger.info("Application started")
+
+        # Checks dangermode and start scanning for credentials
+        # Only activate once software ready for it
+        # check_dangermode()
+
+        # Display startup startup_screen
+        display.update_startup_screen()
+
+        utils.setup_coin_acceptor()
+
+        while True:
+            utils.monitor_coins_and_button()
+
+    while True:
+        try:
+            main()
+        except KeyboardInterrupt:
+            display.update_shutdown_screen()
+            utils.GPIO.cleanup()
+            logger.info("Application finished (Keyboard Interrupt)")
+            sys.exit("Manually Interrupted")
+        except Exception:
+            logger.exception("Oh no, something bad happened! Restarting...")
+            utils.GPIO.cleanup()
+            os.execv("/home/pi/LightningATM/app.py", [""])
+
+else:
+    Print('no screen chosen')
