@@ -29,16 +29,14 @@ import importlib
 
 #utils.setup_coin_acceptor()
 
-
-class StartPage(Screen):
+class StartScreen(Screen):
     pass
 
 
-class SelectionPage(Screen):
+class BuyScreen(Screen):
     pass
 
-
-class PaymentPage(Screen):
+class CheckoutScreen(BuyScreen):
     pass
 
 
@@ -46,10 +44,11 @@ class Latm(ScreenManager):
     pass
 
 
+## The App class mainly updates properties of the kivy ATM
+## the widgets are defined in atm.kv
 class LatmApp(App):
     def build(self):
         return Latm()
-
 
 if __name__ == "__main__":
     LatmApp().run()
