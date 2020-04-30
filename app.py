@@ -8,18 +8,10 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 import logging
-# import os
-# import sys
-# import time
-# import math
-# from PIL import Image, ImageDraw
 
 import config
-# import lndrest
-# import lntxbot
-# import qr
 import utils
-# import importlib
+
 
 led = "off"
 logger = logging.getLogger("MAIN")
@@ -50,10 +42,6 @@ elif config.papyrus:
     def main():
         utils.check_epd_size()
         logger.info("Application started")
-
-        # Checks dangermode and start scanning for credentials
-        # Only activate once software ready for it
-        # check_dangermode()
 
         # Display startup startup_screen
         display.update_startup_screen()
