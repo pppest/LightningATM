@@ -26,11 +26,11 @@ import importlib
 
 led = "off"
 logger = logging.getLogger("MAIN")
-
 utils.setup_coin_acceptor()
 
 
 if config.kivy:
+
 
     class StartPage(Screen):
         pass
@@ -40,8 +40,6 @@ if config.kivy:
         pass
 
 
-    ## The App class mainly updates properties of the kivy ATM
-    ## the widgets are defined in atm.kv
     class LatmApp(App):
         def build(self):
             return Latm()
