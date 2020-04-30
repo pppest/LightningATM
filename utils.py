@@ -6,6 +6,8 @@ import requests
 import sys
 import config
 import math
+import qr
+
 
 from PIL import ImageFont
 from pathlib import Path
