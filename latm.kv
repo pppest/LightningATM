@@ -63,22 +63,22 @@
                 center_y: 0.2
                 font_size: 33
 
-    
-    #     name: 'start'
-    #     Label:
-    #         font_color: 1,1,1,1
-    #         text: 'start'
-    #
-    #
-    # SelectionPage:
-    #     name: 'selection'
-    #     Button:
-    #         text: 'goto selextion'
-    #         on_release: app.root.current='payment'
-    #
-    #
-    # PaymentPage:
-    #     name: 'payment'
-    #     Button:
-    #         text: 'goto selextion'
-    #         on_release: app.root.current='start'
+        # 
+        # name: 'start'
+        # Label:
+        #     font_color: 1,1,1,1
+        #     text: 'start'
+
+
+    SelectionPage:
+        name: 'selection'
+        Button:
+            text: 'goto selextion'
+            on_release: app.root.current='payment'
+
+
+    PaymentPage:
+        name: 'payment'
+        Button:
+            text: 'goto selextion'
+            on_release: app.root.current='start'
