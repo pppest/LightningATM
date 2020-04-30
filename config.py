@@ -7,8 +7,7 @@ import utils
 
 
 
-kivy = True
-Papyrus = False
+display = 'touchscreen'
 
 home = os.path.expanduser("~")
 ATM_data_dir = home + "/.lightningATM/"

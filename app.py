@@ -17,7 +17,7 @@ utils.setup_coin_acceptor()
 ## checks if a screen is set in config
 
 ## start Kivy version
-if config.kivy:
+if config.display == 'touchscreen':
 
 
     class StartPage(Screen):
@@ -44,7 +44,7 @@ if config.kivy:
         LatmApp().run()
 
 ## start papyrus version
-elif config.papyrus:
+elif config.display == 'papirus':
 
     def main():
         utils.check_epd_size()
