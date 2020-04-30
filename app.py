@@ -17,7 +17,7 @@ led = "off"
 logger = logging.getLogger("MAIN")
 utils.setup_coin_acceptor()
 
-
+## start Kivy version
 if config.kivy:
 
 
@@ -36,7 +36,7 @@ if config.kivy:
     if __name__ == "__main__":
         LatmApp().run()
 
-
+## start papyrus version
 elif config.papyrus:
 
     def main():
