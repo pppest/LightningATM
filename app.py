@@ -24,10 +24,10 @@ import qr
 import utils
 import importlib
 
-#led = "off"
-#logger = logging.getLogger("MAIN")
+led = "off"
+logger = logging.getLogger("MAIN")
 
-#utils.setup_coin_acceptor()
+utils.setup_coin_acceptor()
 
 
 if config.kivy:
