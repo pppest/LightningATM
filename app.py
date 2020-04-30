@@ -24,6 +24,14 @@ if config.kivy:
         pass
 
 
+    class SelectionPage(Screen):
+        pass
+
+
+    class PaymentPage(Screen):
+        pass
+
+
     class Latm(ScreenManager):
         pass
 
