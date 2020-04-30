@@ -22,30 +22,22 @@
                     width: 2
             Label:
                 text: "LIGHTING ATM"
-#                 # pos_hint: 'center_x': 0.5, 'center_y': 0.9
-                # font_size:45
-    #     # the label has to be added to main widget, which is the page actually
-    #     self.add_widget(self.label_top)
-    #
-    #     # creates an image from the current directory
-    #     self.wimg = Image(source='YourImageHere.png', size=(150, 150), pos=(325, 175),
-    #                       size_hint=(None, None))
-    #     # the image has to be added to the main widget
-    #     self.add_widget(self.wimg)
-    #
-    #     # button is created nearly the same as the label
-    #     # size_hint = is the size relatively to the parent widget, which is the page actually
-    #     # the size is fixed in here, so even if you resize the screen, the buttons should be the same size
-    #     # if min and max are not set, the size will change, if the parent size changes
-    #     # home button is mostly for changing the page to the start page
-    #     self.button_home = Button(text="Exit",
-    #                               size_hint=(0.2, 0.1),
-    #                               size_hint_min_x=150,
-    #                               size_hint_min_y=60,
-    #                               size_hint_max_x=150,
-    #                               size_hint_max_y=60,
-    #                               pos_hint={'top': 0.98, 'right': 0.2},
-    #                               font_size=33)
+                pos_hint: 'center_x': 0.5, 'center_y': 0.9
+                font_size:45
+            Image:
+                source: 'YourImageHere.png'
+                size: 150, 150:
+                pos: 325, 175
+                size_hint: None, None
+            Button:
+                text: "Exit"
+                size_hint: 0.2, 0.1
+                size_hint_min_X: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: 'top': 0.98, 'right': 0.2
+                font_size: 33
     #     # binds the button to a method, so every time the button is clicked, the method is called
     #     self.button_home.bind(on_press=self.home_button)
     #     # the button has to be added to the main widget
