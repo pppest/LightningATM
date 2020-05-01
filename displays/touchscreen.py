@@ -1,10 +1,12 @@
 
 
-    from kivy.app import App
-    from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.app import App
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.clock import Clock
+from kivy.properties import StringProperty
+import config
 
-
-    def run():
+def run():
 
 
     class StartPage(Screen):
@@ -24,7 +26,17 @@
 
 
     class LatmApp(App):
+        coins = StringProperty()
+        sats = StringProperty()
+
+        def update(self, *args):
+            # all update stuff here
+            self.coins = str(config.FIAT)
+            self.sats = str(config.SATS)
+            pass
+
         def build(self):
+            Clock.schedule_interval(self.update, 0.1)
             return Latm()
 
     LatmApp().run()

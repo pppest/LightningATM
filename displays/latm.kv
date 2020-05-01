@@ -21,6 +21,12 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.9}
                 font_size: 45
 
+            Label:
+                id: actiontext
+                text: "INSERT COIN TO START"
+                pos_hint: {'center_x': 0.513, 'center_y': 0.73}
+                font_size: 35
+
             Image:
                 source: 'YourImageHere.png'
                 size: (150, 150)
@@ -28,7 +34,7 @@
                 size_hint: (None, None)
 
             Button:
-                text: "Exit"
+                text: "Scan invoice"
                 size_hint: (0.2, 0.1)
                 size_hint_min_X: 150
                 size_hint_min_y: 60
@@ -36,10 +42,10 @@
                 size_hint_max_y: 60
                 pos_hint: {'top': 0.98, 'right': 0.2}
                 font_size: 33
-                on_release: app.root.close()
+                on_release: utils.scaninvoice()
 
             Button:
-                text: "Back"
+                text: "Scan Creds"
                 size_hint: 0.2, 0.1
                 size_hint_min_x: 150
                 size_hint_min_y: 60
@@ -48,8 +54,19 @@
                 pos_hint: {'top': 0.98, 'right': 0.99}
                 font_size: 33
 
-            Button:
-                text: "Selection"
+            Label:
+                text: "Coins inserted: "
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.3, 'center_y': 0.2}
+                font_size: 33
+                #on_release: app.root.current = 'SelectionPage'
+            Label:
+                id: coins
+                text: app.coins
                 size_hint: 0.2, 0.1
                 size_hint_min_x: 150
                 size_hint_min_y: 60
@@ -57,7 +74,27 @@
                 size_hint_max_y: 60
                 pos_hint: {'center_x': 0.5, 'center_y': 0.2}
                 font_size: 33
-                on_release: app.root.current = 'SelectionPage'
+
+            Label:
+                text: "Sats bought: "
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.3, 'center_y': 0.15}
+                font_size: 33
+                #on_release: app.root.current = 'SelectionPage'
+            Label:
+                id: coins
+                text: app.sats
+                size_hint: 0.2, 0.1
+                size_hint_min_x: 150
+                size_hint_min_y: 60
+                size_hint_max_x: 150
+                size_hint_max_y: 60
+                pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+                font_size: 33
 
     SelectionPage:
         name: 'SelectionPage'

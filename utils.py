@@ -1,12 +1,12 @@
 
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import logging
 import os
 import requests
 import sys
 import config
 import math
-import qr
+# import qr
 
 
 from PIL import ImageFont
@@ -14,12 +14,16 @@ from pathlib import Path
 
 logger = logging.getLogger("UTILS")
 
+led = "off"
+
+
 ## just copy pasted the methods here better check if all is good
 
 
-def coins_inserted(led):
+def coins_inserted():
     """Actions coins inserted
     """
+    global led
 
     if config.FIAT == 0:
         config.BTCPRICE = utils.get_btc_price(config.conf["atm"]["cur"])
@@ -74,9 +78,10 @@ def coins_inserted(led):
         led = "on"
         logger.info("Button-LED turned on (if connected)")
 
-def monitor_coins_and_button(led):
+def monitor_coins_and_button():
     """Monitors coins inserted and buttons pushed
     """
+    global led
     time.sleep(0.2)
     if (time.time() - config.LASTIMPULSE > 0.5) and (config.PULSES > 0):
         coins_inserted(led)
