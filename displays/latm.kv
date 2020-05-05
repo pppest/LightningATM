@@ -17,6 +17,7 @@
                     rounded_rectangle: 198, 405, 420, 60, 20, 50
                     width: 2
             Label:
+                id: atmtext
                 text: "LIGHTING ATM"
                 pos_hint: {'center_x': 0.5, 'center_y': 0.9}
                 font_size: 45
@@ -75,19 +76,7 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.2}
                 font_size: 33
 
-            Label:
-                text: "Sats bought: "
-                size_hint: 0.2, 0.1
-                size_hint_min_x: 150
-                size_hint_min_y: 60
-                size_hint_max_x: 150
-                size_hint_max_y: 60
-                pos_hint: {'center_x': 0.3, 'center_y': 0.15}
-                font_size: 33
-                #on_release: app.root.current = 'SelectionPage'
-            Label:
-                id: coins
-                text: app.sats
+the
                 size_hint: 0.2, 0.1
                 size_hint_min_x: 150
                 size_hint_min_y: 60
