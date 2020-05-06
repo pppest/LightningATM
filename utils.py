@@ -260,3 +260,92 @@ def get_sats():
 
 def get_sats_with_fee():
     return math.floor(config.SATS * (float(config.conf["atm"]["fee"]) / 100))
+
+
+##### from configfile
+
+def init_config_logging():
+    # Set to logging.DEBUG if more "requests" debugging info needed
+    logging.getLogger("requests").setLevel(logging.INFO)
+    logging.getLogger("urllib3.connectionpool").setLevel(logging.INFO)
+
+    # Configure basigConfig for the "logging" module
+    logging.basicConfig(
+        filename="{}/debug.log".format(ATM_data_dir),
+        format="%(asctime)-23s %(name)-9s %(levelname)-7s | %(message)s",
+        datefmt="%Y/%m/%d %I:%M:%S %p",
+        level=logging.DEBUG,
+    )
+
+    # Create logger for this config file
+    logger = logging.getLogger("CONFIG")
+
+
+    yes = ["yes", "ye", "y"]
+    no = ["no", "n"]
+
+
+def ask_scan_config_val(section, variable):
+    while True:
+        try:
+            res = input(
+                "Do you want to scan to input {} {}".format(section, variable)
+            ).lower()
+            if res in yes:
+                # value = scan the qr for the value
+                # update_config(section, variable, value
+                ...
+            elif res in no:
+                return
+            else:
+                print("Input invalid, please try again or KeyboardInterrupt to exit")
+        except KeyboardInterrupt:
+            return
+
+
+def check_config():
+    """Checks the config and prompt the user to provide values for missing keys
+    """
+    if conf["lnd"]["macaroon"] is (None or ""):
+        logger.warning("Missing value for lnd macaroon in config")
+        ask_scan_config_val("lnd", "macaroon")
+    if conf["lntxbot"]["creds"] is (None or ""):
+        logger.warning("Missing value for lntxbot credential in config")
+        ask_scan_config_val("lntxbot", "creds")
+
+
+def update_config(section, variable, value):
+    """Update the config with the new value for the variable.
+    If dangermode is on, we save them to config.ini, else we write them to the temporary
+    dictionary
+    """
+    if conf["atm"]["dangermode"].lower() == "on":
+        config = create_config()
+        config[section][variable] = value
+
+        with open(CONFIG_FILE, "w") as configfile:
+            config.write(configfile)
+    else:
+        conf[section][variable] = value
+
+
+def check_dangermode():
+    if conf["atm"]["dangermode"].lower() == "on":
+        return True
+    else:
+        return False
+
+
+# config file handling
+def get_config_file():
+    # check that the config file exists, if not copy over the example_config
+    if not os.path.exists(ATM_data_dir + "config.ini"):
+        example_config = os.path.join(os.path.dirname(__file__), "example_config.ini")
+        copyfile(example_config, ATM_data_dir + "config.ini")
+    return os.environ.get("CONFIG_FILE", config_file_path)
+
+
+def create_config(config_file=None):
+    parser = ConfigParser(comment_prefixes="/", allow_no_value=True, strict=False)
+    parser.read(config_file or CONFIG_FILE)
+    return parser
