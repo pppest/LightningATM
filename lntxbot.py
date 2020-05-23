@@ -13,7 +13,6 @@ from PIL import ImageDraw, Image
 import qrcode
 
 import config
-import display
 import utils
 
 # TODO: Add variable to set certificate check to true or false

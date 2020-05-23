@@ -4,7 +4,8 @@ import os
 import math
 from shutil import copyfile
 import utils
-import atm_logger
+
+#import atm_logger
 
 display = 'touchscreen' ## options: eink_papirus, touchscreen
 
@@ -16,8 +17,20 @@ config_file_path = ATM_data_dir + "config.ini"
 if not os.path.exists(ATM_data_dir):
     os.makedirs(ATM_data_dir)
 
-CONFIG_FILE = atm_logger.get_config_file()
-conf = atm_logger.create_config()
+# Configure basigConfig for the "logging" module
+logging.basicConfig(
+    filename="{}/debug.log".format(ATM_data_dir),
+    format="%(asctime)-23s %(name)-9s %(levelname)-7s | %(message)s",
+    datefmt="%Y/%m/%d %I:%M:%S %p",
+    level=logging.DEBUG,
+)
+
+# Create logger for this config file
+logger = logging.getLogger("CONFIG")
+
+yes = ["yes", "ye", "y"]
+no = ["no", "n"]
+
 
 ######################################################
 ### (Do not change and of these parameters unless  ###
@@ -42,7 +55,7 @@ SATSFEE = 0
 INVOICE = ""
 
 # Set btc and sat price
-BTCPRICE = utils.get_btc_price(conf["atm"]["cur"])
+BTCPRICE = utils.get_btc_price('btc') ##conf["atm"]["cur"])
 SATPRICE = math.floor((1 / (BTCPRICE * 100)) * 100000000)
 
 # Button / Acceptor Pulses

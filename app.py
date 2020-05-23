@@ -7,7 +7,7 @@ import os
 import sys
 
 
-logger = logging.getLogger("MAIN")
+#logger = logging.getLogger("MAIN")
 #utils.setup_coin_acceptor()
 
 ## start Kivy version
