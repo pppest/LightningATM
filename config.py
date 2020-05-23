@@ -8,6 +8,7 @@ import utils
 #import atm_logger
 
 display = 'touchscreen' ## options: eink_papirus, touchscreen
+CAMERA = 'USB'
 
 home = os.path.expanduser("~")
 ATM_data_dir = home + "/.lightningATM/"
