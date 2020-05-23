@@ -45,7 +45,7 @@ def scan_usb_cam():
                 barcode_data = barcode.data.decode("utf-8")
                 barcode_type = barcode.type
                 # print the barcode type and data to the terminal
-                print("Found {} barcode: {}".format(barcode_type, barcode_data))
+                print(barcode_type, barcode_data))
                 ## Make sure its a devault wallet
 
             if barcodes != []:
