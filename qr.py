@@ -31,26 +31,26 @@ def scan_usb_cam():
         ret, frame = capture.read()
         if ret is True:
             # check for qrcode and write if found and exit
-            barcodes = zbarlight.scan_codes("qrcode",frame)
+            barcodes = pyzbar.decode(frame)
             # loop over the detected barcodes
-        #     for barcode in barcodes:
-        #         # extract the bounding box location of the barcode and draw the
-        #         # bounding box surrounding the barcode on the image
-        #         (x, y, w, h) = barcode.rect
-        #         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
-        #         # the barcode data is a bytes object so if we want to draw
-        #         # it on
-        #         # our output image we need to convert it to a string first
-        #         barcode_data = barcode.data.decode("utf-8")
-        #         barcode_type = barcode.type
-        #         # print the barcode type and data to the terminal
-        #         print("Found {} barcode: {}".format(barcode_type, barcode_data))
-        #         ## Make sure its a devault wallet
-        #
-        #     if barcodes != []:
-        #             break
-        # else:
-        #     break
+            for barcode in barcodes:
+                # extract the bounding box location of the barcode and draw the
+                # bounding box surrounding the barcode on the image
+                (x, y, w, h) = barcode.rect
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                # the barcode data is a bytes object so if we want to draw
+                # it on
+                # our output image we need to convert it to a string first
+                barcode_data = barcode.data.decode("utf-8")
+                barcode_type = barcode.type
+                # print the barcode type and data to the terminal
+                print("Found {} barcode: {}".format(barcode_type, barcode_data))
+                ## Make sure its a devault wallet
+
+            if barcodes != []:
+                    break
+        else:
+            break
     capture.release()
     cv2.destroyAllWindows()
     return barcode_data
