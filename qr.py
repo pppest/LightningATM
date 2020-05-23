@@ -13,6 +13,13 @@ from io import BytesIO
 
 logger = logging.getLogger("QR")
 
+def scan():
+    if config.CAMERA =='USB':
+        scan_usb_cam()
+    elif config.CAMERA == 'PiCamera':
+        scan_picam()
+    
+
 def scan_usb_cam():
     barcode_data = ""
     print("Scan wallet QR code")
@@ -38,7 +45,7 @@ def scan_usb_cam():
                 # print the barcode type and data to the terminal
                 print("Found {} barcode: {}".format(barcode_type, barcode_data))
                 ## Make sure its a devault wallet
-                
+
             if barcodes != []:
                     break
         else:
