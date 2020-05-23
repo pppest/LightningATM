@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import zbarlight
+import pyzbar
 import logging
 import requests
 import time
@@ -18,7 +19,7 @@ def scan():
         scan_usb_cam()
     elif config.CAMERA == 'PiCamera':
         scan_picam()
-    
+
 
 def scan_usb_cam():
     barcode_data = ""
