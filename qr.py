@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 import zbarlight
-import pyzbar
+import pyzbar.pyzbar as pyzbar
+
 import logging
 import requests
 import time
