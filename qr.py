@@ -31,7 +31,7 @@ def scan_usb_cam():
         ret, frame = capture.read()
         if ret is True:
             # check for qrcode and write if found and exit
-            barcodes = zbarlight.scan_codes(frame)
+            barcodes = zbarlight.scan_codes("qrcode",frame)
             # loop over the detected barcodes
         #     for barcode in barcodes:
         #         # extract the bounding box location of the barcode and draw the
